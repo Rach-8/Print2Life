@@ -70,14 +70,14 @@ font-size: 18px;
   margin-top: 10px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .step {
       width: 100%;
   }
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .service {
       width: 100%;
   }
