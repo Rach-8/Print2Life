@@ -15,6 +15,15 @@ ul {
 
 }
 
+.pickup-hours{
+  background-color: #feb408a0;
+  border-radius: 20px;
+  margin: 5px;
+  padding: 10px;
+  font-weight: 900;
+  color: rgb(100, 50, 4);
+}
+
 .container1 {
   max-width: 960px;
   margin: 0 auto;
