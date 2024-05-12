@@ -22,6 +22,7 @@ ul {
   padding: 10px;
   font-weight: 900;
   color: rgb(100, 50, 4);
+  max-width: 400px;
 }
 
 .container1 {
@@ -82,6 +83,10 @@ font-size: 18px;
 @media screen and (max-width: 1200px) {
   .step {
       width: 100%;
+      font-size : 125%;
+  }
+  body{
+    font-size: 125%;
   }
 }
 
@@ -89,7 +94,13 @@ font-size: 18px;
 @media screen and (max-width: 1200px) {
   .service {
       width: 100%;
+      font-size : 125%;
   }
+  body{
+    font-size: 125%;
+  }
+
+
 }
 
 
