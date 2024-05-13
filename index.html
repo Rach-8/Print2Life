@@ -10,18 +10,18 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="logo"><a href="#">Print2Life</a></h1>
+      <h1 class="logo"><a href="">Print2Life</a></h1>
       <ul class="main-nav">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">How it works?</a></li>
-        <li><a href="#">Form</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How it works?</a></li>
+        <li><a href="#formfin">Form</a></li>
       </ul>
     </header>
 
     <div class="bg-image"></div>
 
-    <div class="bg-text">
+    <div class="bg-text" id="about">
       <h1 style="color: white">Your ideas in 3D</h1>
       <h3>
         Turn your classroom and personal ideas into tangible creations with our
@@ -36,7 +36,7 @@
     </div>
 
     <!-- add link to form-->
-    <div class="container1">
+    <div class="container1" id="services">
       <h1 class="title">Services</h1>
       <div class="services-container">
         <div class="service">
@@ -61,7 +61,7 @@
       </div>
     </div>
 
-    <div class="container2">
+    <div class="container2" id="how-it-works">
       <h1 class="title">How It Works</h1>
       <div class="steps-container">
         <div class="step">
@@ -111,6 +111,7 @@
       action="https://formsubmit.co/emailpassthrough3@gmail.com"
       method="POST"
       enctype="multipart/form-data"
+      id="formfin"
     >
       <label for="first_name">First Name:</label><br />
       <input type="text" id="first_name" name="first_name" required /><br />
@@ -186,15 +187,19 @@
     <footer>
       <div class="footer-container">
         <div class="social-icons">
+          <!--
           <a href="https://www.facebook.com/yourpage" target="_blank"
             ><i class="fab fa-facebook-square"></i
           ></a>
-          <a href="https://www.instagram.com/print_2_life/" target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
+
           <a href="https://www.linkedin.com/company/yourcompany" target="_blank"
             ><i class="fab fa-linkedin"></i
           ></a>
+         -->
+          <a href="https://www.instagram.com/print_2_life/" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
           <a href="mailto:print2life2024@gmail.com"
             ><i class="fas fa-envelope"></i
           ></a>
