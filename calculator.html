@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      style="border-radius: 20px"
+      rel="icon"
+      type="image/x-icon"
+      href="/icon.png"
+    />
+    <title>Print2Life</title>
+    <script>
+      function demofunc() {
+        // Get the input values
+        var weight = parseFloat(document.getElementById("weight").value);
+        var numberOfParts = parseInt(document.getElementById("numParts").value);
+
+        // Constants
+        var serviceFee = 10; // Example fixed service fee
+        var pricePerKg = 5; // Example price per kilogram
+        var discountThreshold = 10; // Bulk order discount threshold
+        var discountRate = 0.1; // 10% discount
+
+        // Calculate price
+        var price = weight * pricePerKg;
+        var bulkDiscount = 0;
+
+        // Apply bulk order discount if applicable
+        if (numberOfParts >= discountThreshold) {
+          bulkDiscount = discountRate * 100; // converting to percentage
+        }
+
+        // Calculate total
+        var totalPrice = price * numberOfParts + serviceFee;
+        if (bulkDiscount > 0) {
+          totalPrice = totalPrice - totalPrice * (bulkDiscount / 100);
+        }
+
+        // Update the DOM elements
+        document.getElementById("serviceFee").innerText =
+          "N$" + serviceFee.toFixed(2);
+        document.getElementById("price").innerText = "X$" + price.toFixed(2);
+        document.getElementById("bulkDiscount").innerText =
+          "-Y%" + bulkDiscount.toFixed(0);
+        document.getElementById("total").innerText =
+          "Z$" + totalPrice.toFixed(2);
+      }
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo"><a href="">Print2Life</a></h1>
+      <ul class="main-nav">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#how-it-works">How it works?</a></li>
+        <li><a href="index.html#formfin">Form</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+      </ul>
+    </header>
+
+    <h1 class="result">Price Calculator</h1>
+    <form onsubmit="event.preventDefault(); demofunc();">
+        <label for="weight">Approximate weight of printed part:</label>
+        <input type="number" id="weight" name="weight" step="0.01" required> kg<br><br>
+        
+        <label for="numParts">Number of parts being printed:</label>
+        <input type="number" id="numParts" name="numParts" required><br><br>
+        
+        <button type="submit">Calculate</button>
+    </form>
+    <div class="result">
+    <h2>Calculation Results</h2>
+    <h4>Service fee: <span id="serviceFee">$0.00</span></h4>
+    <h4>Price: <span id="price">$0.00</span></h4>
+    <h4>Bulk order discount: <span id="bulkDiscount">-%0</span></h4>
+    <h4>Total: <span id="total">$0.00</span></h4>
+</div>
+    <footer>
+      <div class="footer-container">
+        <div class="social-icons">
+          <!--
+            <a href="https://www.facebook.com/yourpage" target="_blank"
+              ><i class="fab fa-facebook-square"></i
+            ></a>
+  
+            <a href="https://www.linkedin.com/company/yourcompany" target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+           -->
+          <a href="https://www.instagram.com/print_2_life/" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <a href="mailto:print2life2024@gmail.com"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+        <div class="additional-info">
+          <p>All rights reserved 2024. Maybe, Dont worry about it.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

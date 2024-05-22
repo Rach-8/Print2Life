@@ -5,7 +5,9 @@ html {
   font:sans-serif;
 }
 
-
+.result{
+  padding: 50px;
+}
 
 
 * {
