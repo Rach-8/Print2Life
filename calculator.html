@@ -14,41 +14,38 @@
     />
     <title>Print2Life</title>
     <script>
+      function demofunc() {
+        var weight = parseFloat(document.getElementById("weight").value); // weight in grams
+        var numberOfParts = parseInt(document.getElementById("numParts").value);
 
-function demofunc() {
-  var weight = parseFloat(document.getElementById("weight").value); // weight in grams
-  var numberOfParts = parseInt(document.getElementById("numParts").value);
+        var serviceFee = 2;
+        var pricePerGram = 0.029;
+        var discountThresholdWeight = 500; // threshold in grams
+        var discountRate = 0.15;
 
-  var serviceFee = 2; 
-  var pricePerGram = 0.029; 
-  var discountThresholdWeight = 500; // threshold in grams
-  var discountRate = 0.15; 
+        var price = weight * pricePerGram;
+        var weightDiscount = 0;
 
-  var price = weight * pricePerGram;
-  var weightDiscount = 0;
+        // Calculate total weight
+        var totalWeight = weight * numberOfParts;
 
-  // Calculate total weight
-  var totalWeight = weight * numberOfParts;
+        if (totalWeight > discountThresholdWeight) {
+          weightDiscount = discountRate * 100;
+        }
 
-  if (totalWeight > discountThresholdWeight) {
-    weightDiscount = discountRate * 100; 
-  }
+        var totalPrice = price * numberOfParts + serviceFee;
+        if (weightDiscount > 0) {
+          totalPrice = totalPrice - totalPrice * (weightDiscount / 100);
+        }
 
-  var totalPrice = price * numberOfParts + serviceFee;
-  if (weightDiscount > 0) {
-    totalPrice = totalPrice - totalPrice * (weightDiscount / 100);
-  }
-
-  document.getElementById("serviceFee").innerText =
-    "$" + serviceFee.toFixed(2);
-  document.getElementById("price").innerText = "$" + price.toFixed(2);
-  document.getElementById("bulkDiscount").innerText =
-    "-" + weightDiscount.toFixed(0)+"%";
-  document.getElementById("total").innerText =
-    "$" + totalPrice.toFixed(2);
-}
-
-
+        document.getElementById("serviceFee").innerText =
+          "$" + serviceFee.toFixed(2);
+        document.getElementById("price").innerText = "$" + price.toFixed(2);
+        document.getElementById("bulkDiscount").innerText =
+          "-" + weightDiscount.toFixed(0) + "%";
+        document.getElementById("total").innerText =
+          "$" + totalPrice.toFixed(2);
+      }
     </script>
   </head>
   <body>
@@ -65,20 +62,23 @@ function demofunc() {
 
     <h1 class="result">Price Calculator</h1>
     <form onsubmit="event.preventDefault(); demofunc();">
-        <label for="weight">Approximate weight of printed part (in grams) :</label>
-        <input type="number" id="weight" name="weight" step="0.01" required> <br><br>
-        
-        <label for="numParts">Number of parts being printed:</label>
-        <input type="number" id="numParts" name="numParts" required><br><br>
-        
-        <button type="submit">Calculate</button>
+      <label for="weight"
+        >Approximate weight of printed part (in grams) :</label
+      >
+      <input type="number" id="weight" name="weight" step="0.01" required />
+      <br /><br />
+
+      <label for="numParts">Number of parts being printed:</label>
+      <input type="number" id="numParts" name="numParts" required /><br /><br />
+
+      <button type="submit">Calculate</button>
     </form>
     <div class="result">
-    <h4>Service fee: <span id="serviceFee">$0.00</span></h4>
-    <h4>Price per piece: <span id="price">$0.00</span></h4>
-    <h4>Bulk order discount: <span id="bulkDiscount">-%0</span></h4>
-    <h4>Total: <span id="total">$0.00</span></h4>
-</div>
+      <h4>Service fee: <span id="serviceFee">$0.00</span></h4>
+      <h4>Price per piece: <span id="price">$0.00</span></h4>
+      <h4>Bulk order discount: <span id="bulkDiscount">-%0</span></h4>
+      <h4>Total: <span id="total">$0.00</span></h4>
+    </div>
     <footer>
       <div class="footer-container">
         <div class="social-icons">
