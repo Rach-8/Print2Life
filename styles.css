@@ -2,9 +2,8 @@ body,
 html {
   height: 100%;
   margin: 0;
-  font:sans-serif;
+  font: sans-serif;
 }
-
 
 body {
   line-height: 1.5; /* Adjusts line spacing */
@@ -14,7 +13,9 @@ body {
 }
 
 /* Specific styles for headers */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: 1.4;
   margin-bottom: 15px; /* Adds space below headers */
 }
@@ -23,17 +24,19 @@ h1 {
   letter-spacing: 0.5px;
 }
 
-h2, h3 {
+h2,
+h3 {
   letter-spacing: 0.5px;
 }
 
 /* Paragraph styles */
-p, .service-para, .step-para {
+p,
+.service-para,
+.step-para {
   margin-bottom: 20px; /* Adds space below paragraphs */
 }
 
-
-.result{
+.result {
   padding: 50px;
 }
 ul {
@@ -112,7 +115,6 @@ h2 {
 
 .step-para {
   margin-top: 10px;
-  
 }
 
 @media screen and (max-width: 1200px) {
@@ -231,8 +233,6 @@ a {
   /* The image used */
   background-image: url("./about-bg.png");
 
-
-
   /* Full height */
   height: 60%;
 
@@ -314,7 +314,7 @@ a {
       max-width: 1150px;
     }
   }
-  form{
+  form {
     font-size: 140%;
   }
 }
