@@ -7,7 +7,7 @@ html {
 
 
 body {
-  line-height: 1.6; /* Adjusts line spacing */
+  line-height: 1.5; /* Adjusts line spacing */
   letter-spacing: 0.5px; /* Adjusts letter spacing */
   word-spacing: 0.65px; /* Adjusts word spacing */
   font-family: Arial, sans-serif; /* Sets a default font */
