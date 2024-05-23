@@ -5,6 +5,23 @@
   box-sizing: border-box;
 }
 
+#intro-para{
+  color: white;
+}
+
+#navbar-list{
+  list-style-type: none;
+}
+
+#calculator-form{
+  min-width: 400px;
+  padding: 50px;
+}
+
+.result{
+  padding: 20px;
+}
+
 body,
 html {
   height: 100%;
