@@ -14,41 +14,41 @@
     />
     <title>Print2Life</title>
     <script>
-      function demofunc() {
-        // Get the input values
-        var weight = parseFloat(document.getElementById("weight").value);
-        var numberOfParts = parseInt(document.getElementById("numParts").value);
 
-        // Constants
-        var serviceFee = 10; // Example fixed service fee
-        var pricePerKg = 5; // Example price per kilogram
-        var discountThreshold = 10; // Bulk order discount threshold
-        var discountRate = 0.1; // 10% discount
+function demofunc() {
+  var weight = parseFloat(document.getElementById("weight").value); // weight in grams
+  var numberOfParts = parseInt(document.getElementById("numParts").value);
 
-        // Calculate price
-        var price = weight * pricePerKg;
-        var bulkDiscount = 0;
+  var serviceFee = 2; 
+  var pricePerGram = 0.029; 
+  var discountThresholdWeight = 500; // threshold in grams
+  var discountRate = 0.15; 
 
-        // Apply bulk order discount if applicable
-        if (numberOfParts >= discountThreshold) {
-          bulkDiscount = discountRate * 100; // converting to percentage
-        }
+  var price = weight * pricePerGram;
+  var weightDiscount = 0;
 
-        // Calculate total
-        var totalPrice = price * numberOfParts + serviceFee;
-        if (bulkDiscount > 0) {
-          totalPrice = totalPrice - totalPrice * (bulkDiscount / 100);
-        }
+  // Calculate total weight
+  var totalWeight = weight * numberOfParts;
 
-        // Update the DOM elements
-        document.getElementById("serviceFee").innerText =
-          "N$" + serviceFee.toFixed(2);
-        document.getElementById("price").innerText = "X$" + price.toFixed(2);
-        document.getElementById("bulkDiscount").innerText =
-          "-Y%" + bulkDiscount.toFixed(0);
-        document.getElementById("total").innerText =
-          "Z$" + totalPrice.toFixed(2);
-      }
+  if (totalWeight > discountThresholdWeight) {
+    weightDiscount = discountRate * 100; 
+  }
+
+  var totalPrice = price * numberOfParts + serviceFee;
+  if (weightDiscount > 0) {
+    totalPrice = totalPrice - totalPrice * (weightDiscount / 100);
+  }
+
+  document.getElementById("serviceFee").innerText =
+    "$" + serviceFee.toFixed(2);
+  document.getElementById("price").innerText = "$" + price.toFixed(2);
+  document.getElementById("bulkDiscount").innerText =
+    "-" + weightDiscount.toFixed(0)+"%";
+  document.getElementById("total").innerText =
+    "$" + totalPrice.toFixed(2);
+}
+
+
     </script>
   </head>
   <body>
@@ -65,7 +65,7 @@
 
     <h1 class="result">Price Calculator</h1>
     <form onsubmit="event.preventDefault(); demofunc();">
-        <label for="weight">Approximate weight of printed part(in grams):</label>
+        <label for="weight">Approximate weight of printed part (in grams) :</label>
         <input type="number" id="weight" name="weight" step="0.01" required> <br><br>
         
         <label for="numParts">Number of parts being printed:</label>
@@ -75,7 +75,7 @@
     </form>
     <div class="result">
     <h4>Service fee: <span id="serviceFee">$0.00</span></h4>
-    <h4>Price: <span id="price">$0.00</span></h4>
+    <h4>Price per piece: <span id="price">$0.00</span></h4>
     <h4>Bulk order discount: <span id="bulkDiscount">-%0</span></h4>
     <h4>Total: <span id="total">$0.00</span></h4>
 </div>

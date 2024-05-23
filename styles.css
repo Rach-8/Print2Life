@@ -5,10 +5,41 @@ html {
   font:sans-serif;
 }
 
+
+body {
+  line-height: 1.6; /* Adjusts line spacing */
+  letter-spacing: 0.5px; /* Adjusts letter spacing */
+  word-spacing: 0.65px; /* Adjusts word spacing */
+  font-family: Arial, sans-serif; /* Sets a default font */
+}
+
+/* Specific styles for headers */
+h1, h2, h3 {
+  line-height: 1.4;
+  margin-bottom: 15px; /* Adds space below headers */
+}
+
+h1 {
+  letter-spacing: 0.5px;
+}
+
+h2, h3 {
+  letter-spacing: 0.5px;
+}
+
+/* Paragraph styles */
+p, .service-para, .step-para {
+  margin-bottom: 20px; /* Adds space below paragraphs */
+}
+
+
 .result{
   padding: 50px;
 }
-
+ul {
+  list-style-type: disc; /* Ensures bullets are displayed */
+  margin-left: 20px; /* Adds some indentation for better readability */
+}
 
 * {
   box-sizing: border-box;
