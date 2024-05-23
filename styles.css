@@ -177,6 +177,7 @@ html {
 
 .service-para {
   margin-bottom: 20px;
+  font-size: 18px;
 }
 
 /* How It Works Section */
@@ -191,6 +192,7 @@ html {
   background-color: #f0f0f0;
   padding: 20px;
   margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .step h2 {
@@ -199,6 +201,7 @@ html {
 
 .step-para {
   margin-top: 10px;
+
 }
 
 .pickup-hours {
