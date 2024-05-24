@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+
 #intro-para{
   color: white;
 }
@@ -33,6 +34,8 @@ html {
   background-color: #f5f5f5;
   color: #333;
 }
+
+
 
 /* Header */
 .header {
@@ -241,6 +244,7 @@ form textarea {
   border: none;
   border-radius: 5px;
   background-color: #ddd;
+  font-size: 16px;
 }
 
 form select {
@@ -254,6 +258,7 @@ form select {
 
 form textarea {
   resize: vertical;
+  font-size: 16px;
 }
 
 form input[type="file"] {
