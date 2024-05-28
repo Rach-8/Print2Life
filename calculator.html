@@ -13,6 +13,11 @@
       href="/icon.png"
     />
     <title>Print2Life</title>
+    <style>
+      #price {
+          display: none;
+      }
+  </style>
     <script>
       function demofunc() {
         var weight = parseFloat(document.getElementById("weight").value); // weight in grams
@@ -40,7 +45,7 @@
 
         document.getElementById("serviceFee").innerText =
           "$" + serviceFee.toFixed(2);
-        document.getElementById("price").innerText = "$" + 3*price.toFixed(2);
+        document.getElementById("price").innerText = "$" + 2*price.toFixed(2);//was 3 originally
         document.getElementById("bulkDiscount").innerText =
           "-" + weightDiscount.toFixed(0) + "%";
         document.getElementById("total").innerText =
@@ -75,7 +80,7 @@
     </form>
     <div class="result">
       <h3>Service fee: <span id="serviceFee">$0.00</span></h4>
-      <h3>Price per piece: <span id="price">$0.00</span></h4>
+      <h3 ><span id="price">$0.00</span></h4>
       <h3>Bulk order discount: <span id="bulkDiscount">-%0</span></h4>
       <h3>Total: <span id="total">$0.00</span></h4>
     </div>
