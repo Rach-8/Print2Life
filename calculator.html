@@ -38,14 +38,14 @@
           weightDiscount = discountRate * 100;
         }
 
-        var totalPrice = 4*price * numberOfParts + serviceFee;
+        var totalPrice = 2*price * numberOfParts + serviceFee;//was 4 originally
         if (weightDiscount > 0) {
           totalPrice = totalPrice - totalPrice * (weightDiscount / 100);
         }
 
         document.getElementById("serviceFee").innerText =
           "$" + serviceFee.toFixed(2);
-        document.getElementById("price").innerText = "$" + 2*price.toFixed(2);//was 3 originally
+        document.getElementById("price").innerText = "$" +  price.toFixed(2);
         document.getElementById("bulkDiscount").innerText =
           "-" + weightDiscount.toFixed(0) + "%";
         document.getElementById("total").innerText =
