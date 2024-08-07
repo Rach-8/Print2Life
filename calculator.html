@@ -27,7 +27,6 @@
         var pricePerGram = 0.0725;
         var discountThresholdWeight = 500; // threshold in grams
         var discountRate = 0.15;
-        var markup = 0.2;
 
         var pricePerHour = 0.06;
         var timeTakenHour = (weight*4 + 23)/60;
@@ -42,7 +41,7 @@
           weightDiscount = discountRate * 100;
         }
 
-        var totalPrice = ((price * numberOfParts)*markup)+(price*numberOfParts)  + serviceFee;//was 4 originally
+        var totalPrice = ((price * numberOfParts) + serviceFee;//was 4 originally
         if (weightDiscount > 0) {
           totalPrice = totalPrice - totalPrice * (weightDiscount / 100);
         }
