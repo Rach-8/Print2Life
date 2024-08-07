@@ -23,12 +23,16 @@
         var weight = parseFloat(document.getElementById("weight").value); // weight in grams
         var numberOfParts = parseInt(document.getElementById("numParts").value);
 
-        var serviceFee = 2;
-        var pricePerGram = 0.0522;
+        var serviceFee = 4;
+        var pricePerGram = 0.0725;
         var discountThresholdWeight = 500; // threshold in grams
         var discountRate = 0.15;
+        var markup = 0.2;
 
-        var price = weight * pricePerGram;
+        var pricePerHour = 0.06;
+        var timeTakenHour = (weight*4 + 23)/60;
+
+        var price = (weight * pricePerGram) + (pricePerHour*timeTakenHour);
         var weightDiscount = 0;
 
         // Calculate total weight
@@ -38,7 +42,7 @@
           weightDiscount = discountRate * 100;
         }
 
-        var totalPrice = 2*price * numberOfParts + serviceFee;//was 4 originally
+        var totalPrice = ((price * numberOfParts)*markup)+(price*numberOfParts)  + serviceFee;//was 4 originally
         if (weightDiscount > 0) {
           totalPrice = totalPrice - totalPrice * (weightDiscount / 100);
         }
